@@ -22,7 +22,7 @@ export function todoReducer(state = initialState , action) {
     case TOGGLE_TODO:
       return {
         ...state,
-        todos: todos.map((todo, i) => {
+        todos: state.todos.map((todo, i) => {
           if(i == action.index) {
             todo.completed = !todo.completed;
           }
