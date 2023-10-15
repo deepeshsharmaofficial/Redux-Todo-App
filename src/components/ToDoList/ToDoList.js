@@ -1,5 +1,12 @@
+import { useSelector } from "react-redux";
 
-function ToDoList({todos, onToggle}) {
+function ToDoList({ onToggle }) {
+
+  const todos = useSelector((state) => {
+    return state.todos;
+  })
+  // const todos = store.getState().todos; // this is alternative of useSelector Hook
+
   return (
     <>
       <ol className="list-group list-group-numbered">

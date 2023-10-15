@@ -2,7 +2,10 @@ import { ADD_TODO, TOGGLE_TODO } from "../actions/todoActions";
 
 // initial state
 const initialState = {
-    todos: []
+  todos: [
+    {"text": "Meeting at 9", completed: true},
+    {"text": "Dinner at 2", completed: false},
+  ]
 }
 
 export function todoReducer(state = initialState , action) {
