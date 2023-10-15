@@ -1,4 +1,3 @@
-import "./NoteList.css";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteNote } from "../../redux/actions/noteActions";
 
@@ -7,17 +6,23 @@ function NoteList() {
   const dispatch = useDispatch();
 
   return (
-    <div className="container">
-    <ul>
+    <>
+    <ol className="list-group list-group-numbered">
       {notes.map((note, index) => (
-        <li key={index}>
-            <p>{note.createdOn.toLocaleDateString()}</p>
-            <p className="note-content">{note.text}</p>
-            <button className="btn btn-danger" onClick={() => dispatch(deleteNote(index))}>Delete</button>
-            </li>
+        <li key={index} className="list-group-item d-flex justify-content-between align-items-start">
+
+          <div class="ms-2 me-auto">
+            <div>
+              <span>{note.text}</span>
+            </div>
+            <span className='badge bg-success rounded-pill mt-2'>{note.createdOn.toLocaleDateString()}</span>
+          </div>
+        
+          <button className="btn btn-danger" onClick={() => dispatch(deleteNote(index))}>Delete</button>
+        </li>
       ))}
-    </ul>
-    </div>
+    </ol>
+    </>
   );
 }
 
