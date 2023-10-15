@@ -1,6 +1,6 @@
 // action constants
-const ADD_NOTE = "Add Note";
-const DELETE_NOTE = "Delete Note";
+export const ADD_NOTE = "Add Note";
+export const DELETE_NOTE = "Delete Note";
 
 // action creators
 export const addNote = (text) => ({
