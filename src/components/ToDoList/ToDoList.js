@@ -3,7 +3,7 @@ import { toggleTodo } from "../../redux/actions/todoActions";
 
 function ToDoList() {
   const todos = useSelector((state) => {
-    return state.todos;
+    return state.todoReducer.todos;
   })
   // const todos = store.getState().todos; // this is alternative of useSelector Hook
 
@@ -13,7 +13,7 @@ function ToDoList() {
     <>
       <ol className="list-group list-group-numbered">
         {todos.map((todo, index) => (          
-          <li key={todo.id} className="list-group-item d-flex justify-content-between align-items-start">
+          <li key={index} className="list-group-item d-flex justify-content-between align-items-start">
 
             <div class="ms-2 me-auto">
               <div>
