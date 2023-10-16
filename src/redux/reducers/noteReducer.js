@@ -5,12 +5,12 @@ const initialState = {
     notes: [
         {
             text: "This is the most used method present online. In this case, the parent div is assigned a position ‘relative’ while the child divs are assigned position ‘absolute’",
-            createdOn: new Date()
+            createdOn: new Date().toDateString()
         },
 
         {
             text: "Elements inside ‘absolute’ divs can be aligned in whatever way you want. Consider the following example. It shows all possible alignments a DOM element, in this case, buttons can have.",
-            createdOn: new Date()
+            createdOn: new Date().toDateString()
         },
     ]
 }
@@ -25,7 +25,7 @@ const noteSlice = createSlice({
         add : (state, action) => {
             state.notes.push({
                 text: action.payload,
-                createdOn: new Date()
+                createdOn: new Date().toDateString()
             })
         },
 
