@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../redux/actions/todoActions";
+import { actions } from "../../redux/reducers/todoReducer";
 
 function ToDoForm() {
   const [todoText, setTodoText] = useState("");
@@ -9,7 +9,7 @@ function ToDoForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setTodoText("");
-    dispatch(addTodo(todoText));
+    dispatch(actions.add(todoText));
   };
 
   return (

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 // initial state
 const initialState = {
@@ -36,3 +36,5 @@ const noteSlice = createSlice({
 })
 
 export const noteReducer = noteSlice.reducer;
+
+export const actions = noteSlice.actions;

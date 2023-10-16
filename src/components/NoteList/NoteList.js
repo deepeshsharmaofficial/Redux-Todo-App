@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteNote } from "../../redux/actions/noteActions";
+import { actions } from "../../redux/reducers/noteReducer";
 
 function NoteList() {
   const notes= useSelector(state => state.noteReducer.notes);
@@ -18,7 +18,7 @@ function NoteList() {
             <span className='badge bg-success rounded-pill mt-2'>{note.createdOn.toLocaleDateString()}</span>
           </div>
         
-          <button className="btn btn-danger" onClick={() => dispatch(deleteNote(index))}>Delete</button>
+          <button className="btn btn-danger" onClick={() => dispatch(actions.delete(index))}>Delete</button>
         </li>
       ))}
     </ol>
