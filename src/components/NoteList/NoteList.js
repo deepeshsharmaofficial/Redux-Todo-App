@@ -16,7 +16,7 @@ function NoteList() {
             <div>
               <span>{note.text}</span>
             </div>
-            <span className='badge bg-success rounded-pill mt-2'>{note.createdOn.toLocaleDateString()}</span>
+            <span className='badge bg-success rounded-pill mt-2'>{note.createdOn}</span>
           </div>
         
           <button className="btn btn-danger" onClick={() => dispatch(actions.delete(index))}>Delete</button>
